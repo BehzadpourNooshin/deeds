@@ -2067,63 +2067,48 @@ class Network {
                 } else {
                   finalContent = content;
                 }
+                result = true;
+                var flatJson = data["flatJson"];
+                if (flatJson.isNotEmpty) {
+                  var data2 = data["flatJson"];
+                  data2.forEach((element) {
+                    element.forEach((key, value) {
+                      dataRows.add(value);
 
-                await http
-                    .post(urlWithProperties('Json/flatten'),
-                        headers: {
-                          'Authorization': 'Bearer $accessToken',
-                          'Content-Type': 'application/json',
-                          'accept': '*/*'
-                        },
-                        body: jsonEncode({"data": finalContent}))
-                    .timeout(const Duration(seconds: 60))
-                    .then((response) async {
-                  if (response.statusCode == 200) {
-                    var jsonMap1 = utf8.decode(response.bodyBytes);
-                    var jsonMap = jsonDecode(jsonMap1);
-
-                    var data = jsonMap["data"];
-                    data.forEach((element) {
-                      element.forEach((key, value) {
-                        dataRows.add(value);
-
-                        header.add(key.toString().replaceAll('.', '-'));
-                      });
+                      header.add(key.toString().replaceAll('.', '-'));
                     });
+                  });
 
-                    for (var title in header) {
-                      if (jsonController.headers.isEmpty) {
-                        jsonController.headers.add(title);
-                        jsonController.update();
-                      } else {
-                        bool find = false;
-                        for (var head in jsonController.headers) {
-                          if (head == title) {
-                            find = true;
-                          }
-                        }
-                        if (find == false) {
-                          jsonController.headers.add(title);
-                          jsonController.update();
+                  for (var title in header) {
+                    if (jsonController.headers.isEmpty) {
+                      jsonController.headers.add(title);
+                      jsonController.update();
+                    } else {
+                      bool find = false;
+                      for (var head in jsonController.headers) {
+                        if (head == title) {
+                          find = true;
                         }
                       }
+                      if (find == false) {
+                        jsonController.headers.add(title);
+                        jsonController.update();
+                      }
                     }
-
-                    int chunkSize = jsonController.headers.length;
-                    for (var i = 0; i < dataRows.length; i += chunkSize) {
-                      jsonController.datarows.add(dataRows.sublist(
-                          i,
-                          i + chunkSize > dataRows.length
-                              ? dataRows.length
-                              : i + chunkSize));
-                      jsonController.update();
-                    }
-
-                    jsonController.update();
-
-                    result = true;
                   }
-                });
+
+                  int chunkSize = jsonController.headers.length;
+                  for (var i = 0; i < dataRows.length; i += chunkSize) {
+                    jsonController.datarows.add(dataRows.sublist(
+                        i,
+                        i + chunkSize > dataRows.length
+                            ? dataRows.length
+                            : i + chunkSize));
+                    jsonController.update();
+                  }
+
+                  jsonController.update();
+                }
               }
             }
           } else {

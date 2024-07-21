@@ -2,7 +2,7 @@ import 'package:deedsuser/views/pages/dashboardpage.dart';
 import 'package:deedsuser/views/pages/favoritpage.dart';
 import 'package:deedsuser/views/pages/loginpage.dart';
 import 'package:deedsuser/views/pages/reportmarketplace.dart';
-import 'package:deedsuser/views/pages/reportviewfordemo.dart';
+import 'package:deedsuser/views/pages/reportview.dart';
 import 'package:get/get.dart';
 
 class Routes {

@@ -104,8 +104,9 @@ class PortalMasterLayout extends StatelessWidget {
 
                                               showDialogNotes(
                                                   context,
-                                                  updateNoteController
-                                                      .updateUserNote.value);
+                                                  basicInfoDashboardController
+                                                      .basicDashboardInfo[0]
+                                                      .numberOfUpdateNotes);
                                             }
                                           });
                                         },
@@ -161,8 +162,9 @@ class PortalMasterLayout extends StatelessWidget {
 
                                                 showDialogNotes(
                                                     context,
-                                                    updateNoteController
-                                                        .updateUserNote.value);
+                                                    basicInfoDashboardController
+                                                        .basicDashboardInfo[0]
+                                                        .numberOfUpdateNotes);
                                               }
                                             });
                                           },
@@ -191,10 +193,7 @@ class PortalMasterLayout extends StatelessWidget {
                                             } else {
                                               apiCallAfter(context);
 
-                                              showDialogNotes(
-                                                  context,
-                                                  updateNoteController
-                                                      .updateUserNote.value);
+                                              showDialogNotes(context, 0);
                                             }
                                           });
                                         },
@@ -414,8 +413,9 @@ class PortalMasterLayout extends StatelessWidget {
 
                                               showDialogNotes(
                                                   context,
-                                                  updateNoteController
-                                                      .updateUserNote.value);
+                                                  basicInfoDashboardController
+                                                      .basicDashboardInfo[0]
+                                                      .numberOfUpdateNotes);
                                             }
                                           });
                                         },
@@ -471,8 +471,9 @@ class PortalMasterLayout extends StatelessWidget {
 
                                                 showDialogNotes(
                                                     context,
-                                                    updateNoteController
-                                                        .updateUserNote.value);
+                                                    basicInfoDashboardController
+                                                        .basicDashboardInfo[0]
+                                                        .numberOfUpdateNotes);
                                               }
                                             });
                                           },
@@ -501,10 +502,7 @@ class PortalMasterLayout extends StatelessWidget {
                                             } else {
                                               apiCallAfter(context);
 
-                                              showDialogNotes(
-                                                  context,
-                                                  updateNoteController
-                                                      .updateUserNote.value);
+                                              showDialogNotes(context, 0);
                                             }
                                           });
                                         },
@@ -732,8 +730,9 @@ class PortalMasterLayout extends StatelessWidget {
 
                                             showDialogNotes(
                                                 context,
-                                                updateNoteController
-                                                    .updateUserNote.value);
+                                                basicInfoDashboardController
+                                                    .basicDashboardInfo[0]
+                                                    .numberOfUpdateNotes);
                                           }
                                         });
                                       },
@@ -786,8 +785,9 @@ class PortalMasterLayout extends StatelessWidget {
 
                                               showDialogNotes(
                                                   context,
-                                                  updateNoteController
-                                                      .updateUserNote.value);
+                                                  basicInfoDashboardController
+                                                      .basicDashboardInfo[0]
+                                                      .numberOfUpdateNotes);
                                             }
                                           });
                                         },
@@ -816,10 +816,7 @@ class PortalMasterLayout extends StatelessWidget {
                                           } else {
                                             apiCallAfter(context);
 
-                                            showDialogNotes(
-                                                context,
-                                                updateNoteController
-                                                    .updateUserNote.value);
+                                            showDialogNotes(context, 0);
                                           }
                                         });
                                       },
@@ -1049,71 +1046,3 @@ class PortalMasterLayout extends StatelessWidget {
     );
   }
 }
-
-// class BeautifulContainer extends StatelessWidget {
-//   final String title;
-//   final String value;
-//   final Color color;
-//   final IconData icon;
-
-//   BeautifulContainer({
-//     required this.title,
-//     required this.value,
-//     required this.color,
-//     required this.icon,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       decoration: BoxDecoration(
-//         color: color,
-//         borderRadius: BorderRadius.circular(15.0),
-//         boxShadow: [
-//           BoxShadow(
-//             color: Colors.black.withOpacity(0.2),
-//             spreadRadius: 3,
-//             blurRadius: 7,
-//             offset: Offset(0, 3),
-//           ),
-//         ],
-//       ),
-//       padding: EdgeInsets.all(16.0),
-//       child: Column(
-//         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           Icon(
-//             icon,
-//             size: 40.0,
-//             color: Colors.white,
-//           ),
-//           Text(
-//             title,
-//             style: TextStyle(
-//               fontSize: 18.0,
-//               fontWeight: FontWeight.bold,
-//               color: Colors.white,
-//             ),
-//           ),
-//           Text(
-//             value,
-//             style: TextStyle(
-//               fontSize: 24.0,
-//               fontWeight: FontWeight.bold,
-//               color: Colors.white,
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
-// class StorageData {
-//   final String category;
-//   final double value;
-
-//   StorageData(this.category, this.value);
-// }
- 

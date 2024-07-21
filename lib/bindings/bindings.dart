@@ -21,7 +21,6 @@ import 'package:deedsuser/controllers/serviceinputinfo_controller.dart';
 import 'package:deedsuser/controllers/setting_controller.dart';
 import 'package:deedsuser/controllers/showfilterformcontroller.dart';
 import 'package:deedsuser/controllers/table_controller.dart';
-import 'package:deedsuser/controllers/textediting_controller.dart';
 import 'package:deedsuser/controllers/updatenote_controller.dart';
 import 'package:deedsuser/controllers/updateuser_controller.dart';
 import 'package:deedsuser/controllers/user_controller.dart';
@@ -35,7 +34,6 @@ class MyBindings extends Bindings {
     Get.lazyPut(() => LoginController());
     //  Get.lazyPut(() => ReportsController());
     Get.lazyPut(() => MenuAppController());
-    Get.lazyPut(() => TextFieldController());
     Get.lazyPut(() => ReportController());
     Get.lazyPut(() => TableController());
     Get.lazyPut(() => FilterController());

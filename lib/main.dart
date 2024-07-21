@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:deedsuser/bindings/bindings.dart';
 import 'package:deedsuser/route/routes.dart';
-// ignore: avoid_web_libraries_in_flutter
 
 void main() {
   FlutterError.onError = (FlutterErrorDetails details) {
